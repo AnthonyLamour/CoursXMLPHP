@@ -22,7 +22,11 @@
         <!--titre du menu de navigation-->
         <h1>Sélectionner une partie du cours :</h1>
 		<!--lien vers la page de création d'XML avec un tableau-->
-		<a href="CreationXMLFromArray.php" class="navLink" >Création d'XML avec un tableau</a>
+		<a href="CreationXMLFromArray.php" class="navLink" >Création d'XML avec un tableau</a><br/>
+		<!--lien vers la page de création d'XML avec un tableau-->
+		<a href="CreationXMLWriter.php" class="navLink" >Création d'XML avec XML writer</a><br/>
+		<!--lien vers la page de création de XML avec le DOM-->
+        <a href="CreationXMLDOM.php" class="navLink" >Création d'un XML avec le DOM</a>
     </nav>
 
 	<!--footer-->

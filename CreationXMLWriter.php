@@ -7,7 +7,7 @@
     <!--encodage de la page-->
     <meta charset="utf-8" />
     <!--titre de la page-->
-    <title>XML depuis tableau</title>
+    <title>XML avec writer</title>
     <!--lien vers le CSS de la page-->
     <link rel="stylesheet" href="CSS/Style.css" />
     <!--icone de la page-->
@@ -23,14 +23,14 @@
         <h3>Menu de navigation :</h3>
         <!--lien vers la page d'accauil-->
         <a href="index.php" class="navLink" >Acceuil</a><br/>
-        <!--lien vers la page de création de XML avec XML writer-->
-        <a href="CreationXMLWriter.php" class="navLink" >XML avec writer</a><br/>
+        <!--lien vers la page de création de XML avec tableau-->
+        <a href="CreationXMLFromArray.php" class="navLink" >XML avec tableau</a><br/>
         <!--lien vers la page de création de XML avec DOM-->
         <a href="CreationXMLDOM.php" class="navLink" >XML avec DOM</a>
     </nav>
     
     <!--titre de la page-->
-    <h1>Création d'un fichier XML à partir d'un tableau :</h1>
+    <h1>Création d'un fichier XML avec XMLWriter :</h1>
 
     <!--contenu principale-->
     <div id="MainContent">
@@ -50,7 +50,7 @@
         
         function recupererFichier(){
             //ouverture du fichier XML
-            xhttp.open("GET", "Etudiants_txt.xml", true);
+            xhttp.open("GET", "Etudiants_XMLWRITER.xml", true);
             //envoi de la requète
             xhttp.send();
         }
@@ -58,10 +58,6 @@
 
     <!--php-->
     <?php
-        //création de la variable de text qui contiendra le fichier XML
-        $txt = '<?xml version="1.0" encoding="UTF-8"?>'."\n";
-        //ajout de la racine
-        $txt .= "<Etudiants>\n";
         //création du tableau d'étudiants
         $tabEtudiant=array(array("Nom" => "Yuki", "Prenom" => "Makoto", "Mail" => "m.yuki@mail.com", "Ecole" => "Gekkoukan High School"),
                           array("Nom" => "Sanada", "Prenom" => "Akihiko", "Mail" => "a.sanada@mail.com", "Ecole" => "Gekkoukan High School"),
@@ -90,23 +86,36 @@
                           array("Nom" => "Nijima", "Prenom" => "Makoto", "Mail" => "m.nijima@mail.com", "Ecole" => "Shujin Academy"),
                           array("Nom" => "Goro", "Prenom" => "Akechi", "Mail" => "a.goro@mail.com", "Ecole" => "Aucune"),
                           array("Nom" => "Yoshizawa", "Prenom" => "Kasumi", "Mail" => "k.yoshizawa@mail.com", "Ecole" => "Shujin Academy"));
+        //création de la variable XMLWriter()
+        $newXMLDoc = new XMLWriter();
+        //création du document
+        $newXMLDoc->openUri("Etudiants_XMLWRITER.xml");
+        //mise en place de l'indentation du document
+        $newXMLDoc->setIndent(true);
+        //mise en place du proto
+        $newXMLDoc->startDocument("1.0","utf-8");
+        //mise en place de la racine
+        $newXMLDoc->startElement("Etudiants");
         //pour chaque étudiant du tableau
         foreach($tabEtudiant as $num => $etud){
             //ajout de la balise étudiant avec un id pour chaque étudiant
-            $txt .= "\t<Etudiant id=\"".$num."\">\n";
+            $newXMLDoc->startElement("Etudiant");
+            //ajout de l'attribut id
+            $newXMLDoc->startAttribute("id");
+            //mise à jour de l'attibut
+            $newXMLDoc->text($num);
+            //fermeture de l'attribut id
+            $newXMLDoc->endAttribute();
             //pour chaque élément de cet étudiants
             foreach($etud as $key => $val){
                 //ajout de l'élément à l'étudiant
-                $txt .= "\t\t<".$key.">".htmlspecialchars($val)."</".$key.">\n";
+                $newXMLDoc->writeElement($key,htmlspecialchars($val));
             }
             //ajout de la balise de fermeture étudiant
-            $txt .= "\t</Etudiant>\n";
+            $newXMLDoc->endElement();
         }
-        //fermeture du fichier
-        $txt .="</Etudiants>\n";
-        
-        //création du fichier à partir de la chaine de caractère
-        file_put_contents("Etudiants_txt.xml",$txt);
+        //ajout de la balise de fermeture étudiant
+        $newXMLDoc->endElement();
     ?>
     
     <!--footer-->
