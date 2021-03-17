@@ -26,7 +26,9 @@
 		<!--lien vers la page de création d'XML avec un tableau-->
 		<a href="CreationXMLWriter.php" class="navLink" >Création d'XML avec XML writer</a><br/>
 		<!--lien vers la page de création de XML avec le DOM-->
-        <a href="CreationXMLDOM.php" class="navLink" >Création d'un XML avec le DOM</a>
+        <a href="CreationXMLDOM.php" class="navLink" >Création d'un XML avec le DOM</a><br/>
+		<!--lien vers la page de récupération d'un fichier XML-->
+        <a href="RecuperationFichierXML.php" class="navLink" >Récupération d'un XML en PHP</a>
     </nav>
 
 	<!--footer-->

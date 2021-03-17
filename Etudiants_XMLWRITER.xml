@@ -97,66 +97,60 @@
   <Ecole>Yasogami High School</Ecole>
  </Etudiant>
  <Etudiant id="16">
-  <Nom>Tatsumi</Nom>
-  <Prenom>Kanji</Prenom>
-  <Mail>k.tatsumi@mail.com</Mail>
-  <Ecole>Yasogami High School</Ecole>
- </Etudiant>
- <Etudiant id="17">
   <Nom>Narukami</Nom>
   <Prenom>Yu</Prenom>
   <Mail>y.narumaki@mail.com</Mail>
   <Ecole>Yasogami High School</Ecole>
  </Etudiant>
- <Etudiant id="18">
+ <Etudiant id="17">
   <Nom>Amamiya</Nom>
   <Prenom>Ren</Prenom>
   <Mail>r.amamiya@mail.com</Mail>
   <Ecole>Shujin Academy</Ecole>
  </Etudiant>
- <Etudiant id="19">
+ <Etudiant id="18">
   <Nom>Sakanoto</Nom>
   <Prenom>Ryuji</Prenom>
   <Mail>r.sakamoto@mail.com</Mail>
   <Ecole>Shujin Academy</Ecole>
  </Etudiant>
- <Etudiant id="20">
+ <Etudiant id="19">
   <Nom>Sakura</Nom>
   <Prenom>Futaba</Prenom>
   <Mail>f.sakura@mail.com</Mail>
   <Ecole>Aucune</Ecole>
  </Etudiant>
- <Etudiant id="21">
+ <Etudiant id="20">
   <Nom>Okumura</Nom>
   <Prenom>Haru</Prenom>
   <Mail>h.okumura@mail.com</Mail>
   <Ecole>Shujin Academy</Ecole>
  </Etudiant>
- <Etudiant id="22">
+ <Etudiant id="21">
   <Nom>Kitagawa</Nom>
   <Prenom>Yusuke</Prenom>
   <Mail>y.kitagawa@mail.com</Mail>
   <Ecole>Kosei High School</Ecole>
  </Etudiant>
- <Etudiant id="23">
+ <Etudiant id="22">
   <Nom>Takamaki</Nom>
   <Prenom>Ann</Prenom>
   <Mail>a.takamaki@mail.com</Mail>
   <Ecole>Shujin Academy</Ecole>
  </Etudiant>
- <Etudiant id="24">
+ <Etudiant id="23">
   <Nom>Nijima</Nom>
   <Prenom>Makoto</Prenom>
   <Mail>m.nijima@mail.com</Mail>
   <Ecole>Shujin Academy</Ecole>
  </Etudiant>
- <Etudiant id="25">
+ <Etudiant id="24">
   <Nom>Goro</Nom>
   <Prenom>Akechi</Prenom>
   <Mail>a.goro@mail.com</Mail>
   <Ecole>Aucune</Ecole>
  </Etudiant>
- <Etudiant id="26">
+ <Etudiant id="25">
   <Nom>Yoshizawa</Nom>
   <Prenom>Kasumi</Prenom>
   <Mail>k.yoshizawa@mail.com</Mail>

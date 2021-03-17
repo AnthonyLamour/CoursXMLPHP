@@ -73,8 +73,7 @@
                           array("Nom" => "Hanamura", "Prenom" => "Yosuke", "Mail" => "y.hanamura@mail.com", "Ecole" => "Yasogami High School"),
                           array("Nom" => "Kujikawa", "Prenom" => "Rise", "Mail" => "r.kujikawa@mail.com", "Ecole" => "Yasogami High School"),
                           array("Nom" => "Shirogane", "Prenom" => "Naoto", "Mail" => "n.shirogane@mail.com", "Ecole" => "Yasogami High School"),
-                          array("Nom" => "Magnificent", "Prenom" => "Teddy", "Mail" => "t.magnificent@mail.com", "Ecole" => "Yasogami High School"),
-                          array("Nom" => "Tatsumi", "Prenom" => "Kanji", "Mail" => "k.tatsumi@mail.com", "Ecole" => "Yasogami High School"),
+                          array("Nom" => "Magnificent", "Prenom" => "Teddie", "Mail" => "t.magnificent@mail.com", "Ecole" => "Yasogami High School"),
                           array("Nom" => "Tatsumi", "Prenom" => "Kanji", "Mail" => "k.tatsumi@mail.com", "Ecole" => "Yasogami High School"),
                           array("Nom" => "Narukami", "Prenom" => "Yu", "Mail" => "y.narumaki@mail.com", "Ecole" => "Yasogami High School"),
                           array("Nom" => "Amamiya", "Prenom" => "Ren", "Mail" => "r.amamiya@mail.com", "Ecole" => "Shujin Academy"),
@@ -86,6 +85,33 @@
                           array("Nom" => "Nijima", "Prenom" => "Makoto", "Mail" => "m.nijima@mail.com", "Ecole" => "Shujin Academy"),
                           array("Nom" => "Goro", "Prenom" => "Akechi", "Mail" => "a.goro@mail.com", "Ecole" => "Aucune"),
                           array("Nom" => "Yoshizawa", "Prenom" => "Kasumi", "Mail" => "k.yoshizawa@mail.com", "Ecole" => "Shujin Academy"));
+        //création du nouveau document
+        $document = new DomDocument();
+        //set up du document
+        $document->preserveWhiteSpace=false;
+        $document->formatOutput=true;
+        //création de la racine
+        $lesEtudiants = $document->createElement("Etudiants");
+        //ajout de la racine au document
+        $document->appendChild($lesEtudiants);
+        //pour chaque étudiant du tableau
+        foreach($tabEtudiant as $num => $etud){
+            //création d'un élément étudiant
+            $etudiant = $document->createElement("Etudiant");
+            //ajout d'un attribut id à l'étudiant
+            $etudiant->setAttribute("id",$num);
+            //pour chaque élément de cet étudiants
+            foreach($etud as $key => $val){
+                //ajout de l'élément à l'étudiant
+                $newElement = $document->createElement($key);
+                $newElement->nodeValue=htmlspecialchars($val);
+                $etudiant->appendChild($newElement);
+            }
+            //ajout de l'étudiant au document
+            $lesEtudiants->appendChild($etudiant);
+        }
+        //save du fichier
+        $document->save("Etudiants_DOM.xml");
     ?>
     
     <!--footer-->

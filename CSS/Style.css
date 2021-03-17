@@ -86,3 +86,32 @@ nav {
     /*padding de 15 pixels*/
     padding: 15px;
 }
+
+.ProfilPictureCadre{
+    display: inline-block;
+    width: 10vw;
+    height: 10vh;
+    border:solid white 1px;
+    background-color:black;
+    color:white;
+}
+
+.TextCadre {
+    display: inline-block;
+    width: 15vw;
+    height: 10vh;
+    border: solid white 1px;
+    background-color: black;
+    color: white;
+}
+
+.ProfilPicture{
+    max-width:7vw;
+    max-height:7vh;
+    position:relative;
+}
+
+#MonDiv{
+    text-align:center;
+    padding-left:15vw;
+}
